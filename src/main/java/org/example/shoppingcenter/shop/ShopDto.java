@@ -3,6 +3,7 @@ package org.example.shoppingcenter.shop;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+import org.example.shoppingcenter.BaseDto;
 import org.example.shoppingcenter.category.CategoryDto;
 import org.example.shoppingcenter.floor.FloorDto;
 import org.example.shoppingcenter.product.ProductDto;
@@ -17,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class ShopDto {
+public class ShopDto extends BaseDto {
     String name;
     String type;
 

@@ -3,6 +3,7 @@ package org.example.shoppingcenter.parking;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+import org.example.shoppingcenter.BaseDto;
 import org.example.shoppingcenter.floor.FloorDto;
 
 @Getter
@@ -11,7 +12,7 @@ import org.example.shoppingcenter.floor.FloorDto;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class ParkingDto {
+public class ParkingDto extends BaseDto {
 
     Long numberParking;
     String type;
