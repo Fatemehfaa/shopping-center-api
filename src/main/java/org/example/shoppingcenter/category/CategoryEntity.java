@@ -1,6 +1,7 @@
 package org.example.shoppingcenter.category;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,7 +18,9 @@ import java.util.List;
 public class CategoryEntity extends BaseEntity<Long> {
     String name;
 
+    @ManyToMany
     List<CategoryEntity> subCategories;
+    @ManyToMany
     List<ProductEntity> products;
 
 

@@ -1,6 +1,7 @@
 package org.example.shoppingcenter.parking;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToOne;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +18,7 @@ public class ParkingEntity extends BaseEntity<Long> {
     Long numberParking;
     String type;
 
+    @OneToOne
     FloorEntity floor;
 
 }

@@ -5,14 +5,35 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-@FieldDefaults(level = AccessLevel.PRIVATE , makeFinal = true)
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
 public class CategoryService {
 
     CategoryRepository categoryRepository;
 
-    public void createCategory(CategoryEntity category) {
-        categoryRepository.save(category);
+    public CategoryDto create(CategoryDto category) {
+        CategoryEntity entity = CategoryMapper.INSTANCE.toEntity(category);
+        return CategoryMapper.INSTANCE.toDto(categoryRepository.save(entity));
+    }
+
+    public CategoryDto findById(Long id) {
+        return CategoryMapper.INSTANCE.toDto(categoryRepository.findById(id).orElse(null));
+    }
+
+    public CategoryDto update(CategoryDto categoryDto) {
+        CategoryEntity category = categoryRepository.findById(categoryDto.getId()).orElseThrow();
+        CategoryMapper.INSTANCE.updateToDto(category, categoryDto);
+        return CategoryMapper.INSTANCE.toDto(categoryRepository.save(category));
+    }
+
+    public void delete(Long id) {
+        categoryRepository.deleteById(id);
+    }
+
+    public List<CategoryDto> findAll() {
+        return CategoryMapper.INSTANCE.listToDto(categoryRepository.findAll());
     }
 }

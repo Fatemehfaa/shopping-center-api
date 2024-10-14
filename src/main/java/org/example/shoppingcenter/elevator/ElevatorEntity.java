@@ -1,6 +1,7 @@
 package org.example.shoppingcenter.elevator;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToOne;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,5 +15,6 @@ import org.example.shoppingcenter.floor.FloorEntity;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ElevatorEntity extends BaseEntity<Long> {
 
+    @OneToOne
     FloorEntity floor;
 }

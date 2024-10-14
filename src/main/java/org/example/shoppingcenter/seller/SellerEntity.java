@@ -1,6 +1,7 @@
 package org.example.shoppingcenter.seller;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,5 +19,6 @@ public class SellerEntity extends BaseEntity<Long> {
 
     String name;
 
+    @ManyToMany
     List<ProductEntity> products;
 }

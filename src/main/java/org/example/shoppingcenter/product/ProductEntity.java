@@ -1,6 +1,9 @@
 package org.example.shoppingcenter.product;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ManyToOne;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +22,9 @@ public class ProductEntity extends BaseEntity<Long> {
     String description;
     Double price;
 
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     ShopEntity shopEntity;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     CategoryEntity categoryEntity;
 
 
