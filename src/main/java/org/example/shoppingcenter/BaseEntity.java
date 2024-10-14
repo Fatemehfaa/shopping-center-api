@@ -20,10 +20,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @SuperBuilder
 @MappedSuperclass
-public abstract class BaseEntity<T extends Serializable> {
+public abstract class BaseEntity {
     @Id
     @GeneratedValue
-    protected T id;
+    protected Long id;
 
     @UpdateTimestamp
     protected LocalDateTime updatedAt;

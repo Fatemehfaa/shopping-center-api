@@ -15,7 +15,7 @@ import java.util.List;
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CategoryEntity extends BaseEntity<Long> {
+public class CategoryEntity extends BaseEntity {
     String name;
 
     @ManyToMany

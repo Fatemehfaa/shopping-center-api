@@ -13,7 +13,7 @@ import org.example.shoppingcenter.floor.FloorEntity;
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ElevatorEntity extends BaseEntity<Long> {
+public class ElevatorEntity extends BaseEntity {
 
     @OneToOne
     FloorEntity floor;

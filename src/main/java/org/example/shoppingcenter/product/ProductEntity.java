@@ -16,7 +16,7 @@ import org.example.shoppingcenter.shop.ShopEntity;
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ProductEntity extends BaseEntity<Long> {
+public class ProductEntity extends BaseEntity {
 
     String title;
     String description;

@@ -15,7 +15,7 @@ import java.util.List;
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class SellerEntity extends BaseEntity<Long> {
+public class SellerEntity extends BaseEntity {
 
     String name;
 

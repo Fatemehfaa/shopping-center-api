@@ -11,7 +11,7 @@ import org.example.shoppingcenter.BaseEntity;
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class FloorEntity extends BaseEntity<Long> {
+public class FloorEntity extends BaseEntity {
 
     Long floorNumber;
 

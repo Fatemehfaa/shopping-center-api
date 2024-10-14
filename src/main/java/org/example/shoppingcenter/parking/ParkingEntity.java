@@ -13,7 +13,7 @@ import org.example.shoppingcenter.floor.FloorEntity;
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ParkingEntity extends BaseEntity<Long> {
+public class ParkingEntity extends BaseEntity {
 
     Long numberParking;
     String type;
