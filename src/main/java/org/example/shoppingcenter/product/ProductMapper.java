@@ -1,5 +1,6 @@
 package org.example.shoppingcenter.product;
 
+import org.example.shoppingcenter.BaseMapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
@@ -7,15 +8,9 @@ import org.mapstruct.factory.Mappers;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface ProductMapper {
+public interface ProductMapper extends BaseMapper<ProductEntity, ProductDto> {
 
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
-
-    void updateToDto(ProductEntity product ,@MappingTarget ProductDto dto);
-
-    ProductDto toDto(ProductEntity product);
-    ProductEntity toEntity(ProductDto dto);
-    List<ProductDto> listToDto(List<ProductEntity> productEntities);
 
 
 }

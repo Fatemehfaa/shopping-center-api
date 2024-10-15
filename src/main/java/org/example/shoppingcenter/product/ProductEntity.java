@@ -4,9 +4,7 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.ManyToOne;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.example.shoppingcenter.BaseEntity;
 import org.example.shoppingcenter.category.CategoryEntity;
@@ -16,6 +14,9 @@ import org.example.shoppingcenter.shop.ShopEntity;
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ProductEntity extends BaseEntity {
 
     String title;

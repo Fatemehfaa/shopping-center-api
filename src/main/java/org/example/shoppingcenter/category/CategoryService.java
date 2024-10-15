@@ -36,4 +36,6 @@ public class CategoryService {
     public List<CategoryDto> findAll() {
         return CategoryMapper.INSTANCE.listToDto(categoryRepository.findAll());
     }
+
+    
 }
