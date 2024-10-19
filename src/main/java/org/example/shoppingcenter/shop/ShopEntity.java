@@ -22,15 +22,15 @@ import java.util.List;
 public class ShopEntity extends BaseEntity {
 
     String name;
-    String type;
+    ShopType type;
 
     @ManyToOne
     CategoryEntity category;
     @ManyToOne
     FloorEntity floor;
-    @OneToMany(mappedBy = "shop")
+    @OneToMany(mappedBy = "shop", fetch = FetchType.EAGER)
     List<SellerEntity> sellers;
-    @OneToMany(mappedBy = "shop")
+    @OneToMany(mappedBy = "shop" , fetch = FetchType.EAGER)
     List<ProductEntity> products;
     @ManyToOne
     ShoppingCenterEntity shoppingCenter;

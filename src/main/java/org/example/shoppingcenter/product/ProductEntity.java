@@ -20,9 +20,9 @@ public class ProductEntity extends BaseEntity {
     String description;
     Double price;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     ShopEntity shop;
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     CategoryEntity category;
 
 
