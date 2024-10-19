@@ -1,17 +1,26 @@
 package org.example.shoppingcenter.shoppingcenter;
 
 import org.example.shoppingcenter.BaseMapper;
-import org.example.shoppingcenter.shop.ShopDto;
+import org.example.shoppingcenter.seller.SellerDto;
+import org.example.shoppingcenter.seller.SellerEntity;
 import org.mapstruct.Mapper;
-import org.mapstruct.MappingTarget;
+import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface ShoppingCenterMapper extends BaseMapper<ShoppingCenterEntity, ShoppingCenterDto> {
 
     ShoppingCenterMapper INSTANCE = Mappers.getMapper(ShoppingCenterMapper.class);
+
+
+    @Override
+    @Mapping(target = "shops.shoppingCenter", ignore = true)
+    ShoppingCenterDto toDto(ShoppingCenterEntity entity);
+
+    @Override
+    @Mapping(target = "shops.shoppingCenter", ignore = true)
+    ShoppingCenterEntity toEntity(ShoppingCenterDto dto);
 
 
 }

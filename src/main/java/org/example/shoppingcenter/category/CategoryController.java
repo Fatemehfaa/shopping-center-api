@@ -1,5 +1,6 @@
 package org.example.shoppingcenter.category;
 
+import jdk.jfr.Category;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -40,6 +41,12 @@ public class CategoryController {
     @GetMapping("/loadAll")
     public List<CategoryDto> loadAll() {
         return categoryService.findAll();
+    }
+
+    @GetMapping("/loadSubCategoryByParent")
+    public List<CategoryDto> loadSubCategoryByParent(@RequestBody CategoryDto category) {
+        return categoryService.getSubCategories(category.getId());
+
     }
 
 

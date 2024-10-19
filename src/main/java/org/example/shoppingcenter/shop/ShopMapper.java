@@ -11,5 +11,6 @@ import java.util.List;
 public interface ShopMapper extends BaseMapper<ShopEntity, ShopDto> {
     ShopMapper INSTANCE = Mappers.getMapper(ShopMapper.class);
 
+
 }
 

@@ -1,9 +1,6 @@
 package org.example.shoppingcenter.product;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.example.shoppingcenter.BaseEntity;
@@ -24,9 +21,9 @@ public class ProductEntity extends BaseEntity {
     Double price;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    ShopEntity shopEntity;
+    ShopEntity shop;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    CategoryEntity categoryEntity;
+    CategoryEntity category;
 
 
 }

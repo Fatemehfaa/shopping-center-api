@@ -1,8 +1,4 @@
 package org.example.shoppingcenter;
-
-import org.example.shoppingcenter.shop.ShopDto;
-import org.example.shoppingcenter.shop.ShopEntity;
-import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
 import java.util.List;

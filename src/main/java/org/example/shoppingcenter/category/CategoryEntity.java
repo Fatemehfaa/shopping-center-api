@@ -2,6 +2,8 @@ package org.example.shoppingcenter.category;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.example.shoppingcenter.BaseEntity;
@@ -19,9 +21,11 @@ import java.util.List;
 public class CategoryEntity extends BaseEntity {
     String name;
 
+    @ManyToOne
+    CategoryEntity parent;
     @ManyToMany
     List<CategoryEntity> subCategories;
-    @ManyToMany
+    @OneToMany(mappedBy = "category")
     List<ProductEntity> products;
 
 

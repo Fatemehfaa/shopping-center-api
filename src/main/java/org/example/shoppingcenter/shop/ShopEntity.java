@@ -1,9 +1,7 @@
 package org.example.shoppingcenter.shop;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.example.shoppingcenter.BaseEntity;
 import org.example.shoppingcenter.category.CategoryEntity;
@@ -18,6 +16,9 @@ import java.util.List;
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ShopEntity extends BaseEntity {
 
     String name;
@@ -27,9 +28,9 @@ public class ShopEntity extends BaseEntity {
     CategoryEntity category;
     @ManyToOne
     FloorEntity floor;
-    @OneToMany
+    @OneToMany(mappedBy = "shop")
     List<SellerEntity> sellers;
-    @OneToMany
+    @OneToMany(mappedBy = "shop")
     List<ProductEntity> products;
     @ManyToOne
     ShoppingCenterEntity shoppingCenter;

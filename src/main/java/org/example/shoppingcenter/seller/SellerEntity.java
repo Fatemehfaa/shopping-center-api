@@ -1,13 +1,14 @@
 package org.example.shoppingcenter.seller;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.ManyToOne;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.example.shoppingcenter.BaseEntity;
 import org.example.shoppingcenter.product.ProductEntity;
+import org.example.shoppingcenter.shop.ShopEntity;
 
 import java.util.List;
 
@@ -15,10 +16,14 @@ import java.util.List;
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class SellerEntity extends BaseEntity {
 
     String name;
 
-    @ManyToMany
-    List<ProductEntity> products;
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    ShopEntity shop;
 }

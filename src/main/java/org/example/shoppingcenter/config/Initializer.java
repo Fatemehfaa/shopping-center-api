@@ -1,10 +1,8 @@
 package org.example.shoppingcenter.config;
 
-import org.example.shoppingcenter.BaseEntity;
 import org.example.shoppingcenter.category.CategoryEntity;
 import org.example.shoppingcenter.category.CategoryRepository;
 import org.example.shoppingcenter.product.ProductEntity;
-import org.example.shoppingcenter.product.ProductRepository;
 import org.example.shoppingcenter.shop.ShopEntity;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -16,21 +14,27 @@ import java.util.List;
 public class Initializer {
 
     @Bean
-    CommandLineRunner categoryRunner(CategoryRepository categoryRepository, ProductRepository productRepository) {
+    CommandLineRunner categoryRunner(CategoryRepository categoryRepository) {
         return args -> {
-            CategoryEntity category = new CategoryEntity(
-                    "kids",
-
-            ProductEntity.builder()
-                    .title("toy")
-                    .price(9.25)
-                    .description("for playing kids")
-                    .categoryEntity(new CategoryEntity())
-                    .shopEntity()
-                    .build()
-
-            );
-            categoryRepository.save(category);
+//            ShopEntity shop = new ShopEntity();
+//            shop.setName("nike");
+//            shop.setCategory(new CategoryEntity());
+//
+//            CategoryEntity category = new CategoryEntity(
+//                    "kids",
+//
+//
+//
+//            ProductEntity.builder()
+//                    .title("toy")
+//                    .price(9.25)
+//                    .description("for playing kids")
+//                    .categoryEntity(new CategoryEntity())
+//                    .shopEntity()
+//                    .build()
+//
+//            );
+//            categoryRepository.save(category);
         };
 
     }

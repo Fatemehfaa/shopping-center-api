@@ -37,5 +37,10 @@ public class CategoryService {
         return CategoryMapper.INSTANCE.listToDto(categoryRepository.findAll());
     }
 
-    
+    public List<CategoryDto> getSubCategories(Long parentId) {
+        CategoryDto parent = findById(parentId);
+        return parent.getSubCategories();
+    }
+
+
 }
