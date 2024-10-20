@@ -16,7 +16,6 @@ import java.util.List;
 @SuperBuilder
 public class CategoryDto extends BaseDto {
     String name;
-    List<ProductDto> products;
     List<CategoryDto> subCategories;
 
 }

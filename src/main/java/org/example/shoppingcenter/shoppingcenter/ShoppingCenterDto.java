@@ -18,6 +18,5 @@ public class ShoppingCenterDto extends BaseDto {
 
     String name;
     String location;
-    List<ShopDto> shops;
 
 }
