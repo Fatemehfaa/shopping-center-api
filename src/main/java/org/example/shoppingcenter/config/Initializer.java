@@ -15,9 +15,7 @@ import org.example.shoppingcenter.product.ProductEntity;
 import org.example.shoppingcenter.product.ProductRepository;
 import org.example.shoppingcenter.seller.SellerEntity;
 import org.example.shoppingcenter.seller.SellerRepository;
-import org.example.shoppingcenter.shop.ShopEntity;
-import org.example.shoppingcenter.shop.ShopRepository;
-import org.example.shoppingcenter.shop.ShopType;
+import org.example.shoppingcenter.shop.*;
 import org.example.shoppingcenter.shoppingcenter.ShoppingCenterEntity;
 import org.example.shoppingcenter.shoppingcenter.ShoppingCenterRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -32,7 +30,7 @@ public class Initializer {
     @Bean
     CommandLineRunner runner(CategoryRepository categoryRepository, ProductRepository productRepository, FloorRepository floorRepository,
                              ShopRepository shopRepository, SellerRepository sellerRepository, CustomerRepository customerRepository, ShoppingCenterRepository shoppingCenterRepository,
-                             ElevatorRepository elevatorRepository, ParkingRepository parkingRepository) {
+                             ElevatorRepository elevatorRepository, ParkingRepository parkingRepository, ShopService shopService) {
         return args -> {
 
             FloorEntity floor = new FloorEntity();
@@ -134,8 +132,8 @@ public class Initializer {
                     .build();
             parkingRepository.save(parking);
 
-//            ShopEntity shop = shopRepository.findById(shop1.getId()).get();
-//            shop.getSellers().forEach(sellerEntity -> System.out.println(sellerEntity.getName()));
+            ShopDto shop = shopService.findById(shop1.getId());
+            shop.getSellers().forEach(sellerEntity -> System.out.println(sellerEntity.getName()));
 
         };
 
