@@ -14,6 +14,6 @@ import java.util.Date;
 @SuperBuilder
 public class BaseDto {
     Long id;
-    Date creationAt;
-    Date updateAt;
+    Date createdAt;
+    Date updatedAt;
 }

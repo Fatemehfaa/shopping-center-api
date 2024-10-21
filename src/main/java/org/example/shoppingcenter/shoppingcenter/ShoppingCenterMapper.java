@@ -13,16 +13,6 @@ public interface ShoppingCenterMapper extends BaseMapper<ShoppingCenterEntity, S
 
     ShoppingCenterMapper INSTANCE = Mappers.getMapper(ShoppingCenterMapper.class);
 
-
-    @Override
-    @Mapping(target = "shops.shoppingCenter", ignore = true)
-    ShoppingCenterDto toDto(ShoppingCenterEntity entity);
-
-    @Override
-    @Mapping(target = "shops.shoppingCenter", ignore = true)
-    ShoppingCenterEntity toEntity(ShoppingCenterDto dto);
-
-
 }
 
 

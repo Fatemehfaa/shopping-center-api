@@ -17,12 +17,4 @@ public interface CategoryMapper extends BaseMapper<CategoryEntity, CategoryDto> 
     CategoryMapper INSTANCE = Mappers.getMapper(CategoryMapper.class);
 
 
-    @Override
-    @Mapping(target = "products.category", ignore = true)
-    CategoryDto toDto(CategoryEntity entity);
-
-    @Override
-    @Mapping(target = "products.category", ignore = true)
-    CategoryEntity toEntity(CategoryDto dto);
-
 }

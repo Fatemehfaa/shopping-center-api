@@ -19,8 +19,7 @@ public class ProductDto extends BaseDto {
     String description;
     Double price;
 
-    ShopDto shopDto;
-    CategoryDto categoryDto;
+    CategoryDto category;
 
 
 }

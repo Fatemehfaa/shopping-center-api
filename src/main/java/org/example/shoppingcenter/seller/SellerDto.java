@@ -17,5 +17,4 @@ import java.util.List;
 public class SellerDto extends BaseDto {
 
     String name;
-    List<ProductDto> products;
 }

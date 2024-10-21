@@ -13,12 +13,4 @@ public interface SellerMapper extends BaseMapper<SellerEntity, SellerDto> {
 
     SellerMapper INSTANCE = Mappers.getMapper(SellerMapper.class);
 
-    @Override
-    @Mapping(target = "shop.sellers", ignore = true)
-    SellerDto toDto(SellerEntity entity);
-
-    @Override
-    @Mapping(target = "shop.sellers", ignore = true)
-    SellerEntity toEntity(SellerDto dto);
-
 }

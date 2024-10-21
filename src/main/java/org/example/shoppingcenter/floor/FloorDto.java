@@ -12,5 +12,5 @@ import org.example.shoppingcenter.BaseDto;
 @NoArgsConstructor
 @SuperBuilder
 public class FloorDto extends BaseDto {
-    Long FloorNumber;
+    Long floorNumber;
 }
