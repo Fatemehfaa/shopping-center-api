@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToOne;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
 import org.example.shoppingcenter.BaseEntity;
 import org.example.shoppingcenter.floor.FloorEntity;
 
@@ -12,7 +13,7 @@ import org.example.shoppingcenter.floor.FloorEntity;
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 public class ParkingEntity extends BaseEntity {

@@ -132,8 +132,8 @@ public class Initializer {
                     .build();
             parkingRepository.save(parking);
 
-            ShopDto shop = shopService.findById(shop1.getId());
-            shop.getSellers().forEach(sellerEntity -> System.out.println(sellerEntity.getName()));
+//            ShopDto shop = shopService.findById(shop1.getId());
+//            shop.getSellers().forEach(sellerEntity -> System.out.println(sellerEntity.getName()));
 
         };
 

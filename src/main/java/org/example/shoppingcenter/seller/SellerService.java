@@ -3,10 +3,7 @@ package org.example.shoppingcenter.seller;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.example.shoppingcenter.seller.SellerDto;
-import org.example.shoppingcenter.seller.SellerEntity;
-import org.example.shoppingcenter.seller.SellerMapper;
-import org.example.shoppingcenter.seller.SellerRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -20,6 +20,7 @@ public class ProductDto extends BaseDto {
     Double price;
 
     CategoryDto category;
+    ShopDto shop;
 
 
 }

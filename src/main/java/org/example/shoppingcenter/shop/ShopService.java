@@ -15,6 +15,7 @@ public class ShopService {
 
     ShopRepository shopRepository;
 
+    @Transactional
     public ShopDto create(ShopDto shop) {
         ShopEntity entity = ShopMapper.INSTANCE.toEntity(shop);
         return ShopMapper.INSTANCE.toDto(shopRepository.save(entity));

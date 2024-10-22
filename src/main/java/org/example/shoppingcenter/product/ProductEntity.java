@@ -3,6 +3,7 @@ package org.example.shoppingcenter.product;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
 import org.example.shoppingcenter.BaseEntity;
 import org.example.shoppingcenter.category.CategoryEntity;
 import org.example.shoppingcenter.shop.ShopEntity;
@@ -11,7 +12,7 @@ import org.example.shoppingcenter.shop.ShopEntity;
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductEntity extends BaseEntity {

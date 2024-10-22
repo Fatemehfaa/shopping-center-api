@@ -21,8 +21,8 @@ public class ShopDto extends BaseDto {
     ShopType type;
 
     FloorDto floor;
-    List<SellerDto> sellers;
-    List<ProductDto> products;
+//    List<SellerDto> sellers;
+//    List<ProductDto> products;
 
 
 }

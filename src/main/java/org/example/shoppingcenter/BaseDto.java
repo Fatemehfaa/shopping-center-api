@@ -8,11 +8,11 @@ import java.util.Date;
 
 @Getter
 @Setter
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@FieldDefaults(level = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class BaseDto {
+public abstract class BaseDto {
     Long id;
     Date createdAt;
     Date updatedAt;
