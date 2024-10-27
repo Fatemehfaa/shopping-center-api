@@ -3,6 +3,7 @@ package org.example.shoppingcenter.elevator;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,16 +11,19 @@ import java.util.List;
 @Service
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
+@Slf4j
 public class ElevatorService {
 
     ElevatorRepository elevatorRepository;
 
     public ElevatorDto create(ElevatorDto elevator) {
         ElevatorEntity entity = ElevatorMapper.INSTANCE.toEntity(elevator);
+        log.info("Creating elevator: {}", entity);
         return ElevatorMapper.INSTANCE.toDto(elevatorRepository.save(entity));
     }
 
     public ElevatorDto findById(Long id) {
+        log.info("Finding elevator by id: {}", id);
         return ElevatorMapper.INSTANCE.toDto(elevatorRepository.findById(id).orElse(null));
     }
 

@@ -3,6 +3,7 @@ package org.example.shoppingcenter.category;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 @Service
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
+@Slf4j
 public class CategoryService {
 
     CategoryRepository categoryRepository;
@@ -20,6 +22,7 @@ public class CategoryService {
     }
 
     public CategoryDto findById(Long id) {
+        log.debug("Request to get Category : {}", id);
         return CategoryMapper.INSTANCE.toDto(categoryRepository.findById(id).orElse(null));
     }
 

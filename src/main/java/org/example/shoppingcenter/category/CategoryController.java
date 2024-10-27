@@ -24,7 +24,11 @@ public class CategoryController {
 
     @GetMapping("/loadById/{id}")
     public ResponseEntity<CategoryDto> loadById(@PathVariable Long id) {
-        return ResponseEntity.ok(categoryService.findById(id));
+        CategoryDto categoryDto = categoryService.findById(id);
+        if (categoryDto == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(categoryDto);
     }
 
     @PutMapping("/update")
@@ -48,6 +52,12 @@ public class CategoryController {
         return categoryService.getSubCategories(category.getId());
 
     }
+
+//    @GetMapping("/loadSubCategoryByParent/{parentId}")
+//    public ResponseEntity<List<CategoryDto>> loadSubCategoryByParent(@PathVariable Long parentId) {
+//        List<CategoryDto> subCategories = categoryService.getSubCategories(parentId);
+//        return ResponseEntity.ok(subCategories);
+//    }
 
 
 }
